@@ -1,15 +1,6 @@
 #!/bin/bash
 set -exo pipefail
 
-# Work around conda-forge/conda-forge-ci-setup-feedstock#428:
-# Windows environment variable names are case-insensitive, so TARGET_PLATFORM
-# can shadow conda-build's lowercase target_platform. MSYS2 Bash is
-# case-sensitive, leaving target_platform unset.
-# https://github.com/conda-forge/conda-forge-ci-setup-feedstock/pull/428
-if [[ -z "${target_platform:-}" && -n "${TARGET_PLATFORM:-}" ]]; then
-    target_platform="${TARGET_PLATFORM}"
-fi
-
 # Get an updated config.sub and config.guess
 if [[ "${target_platform}" != "win-"* ]]; then
     cp ${BUILD_PREFIX}/share/gnuconfig/config.* ./config
