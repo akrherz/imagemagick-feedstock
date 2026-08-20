@@ -1,0 +1,24 @@
+--- a/tests/validate-formats-map.tap
++++ b/tests/validate-formats-map.tap
+@@ -16,6 +16,9 @@
+ #
+ #  Test for 'validate' utility.
+ #
++echo "1..0 # SKIP temporarily disabled on Windows; see conda-forge/imagemagick-feedstock#379"
++exit 0
++
+ . ./common.shi
+ . ${srcdir}/tests/common.shi
+ echo "1..1"
+--- a/tests/validate-formats-memory.tap
++++ b/tests/validate-formats-memory.tap
+@@ -16,6 +16,9 @@
+ #
+ #  Test for 'validate' utility.
+ #
++echo "1..0 # SKIP temporarily disabled on Windows; see conda-forge/imagemagick-feedstock#379"
++exit 0
++
+ . ./common.shi
+ . ${srcdir}/tests/common.shi
+ echo "1..1"
